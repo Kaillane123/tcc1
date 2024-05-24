@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--=============== REMIXICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="../styles/pagina_vegetal.css">
+
+  <title>CELULA VEGETAL</title>
+
+  <style>
+    /* Popup container */
+    /* The actual popup (appears on top) */
+    .popup {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .imageBox {
+      position: relative;
+    }
+
+    area {
+      cursor: pointer;
+    }
+
+    /* Popup arrow */
+    .popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup.show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--=============== HEADER ===============-->
+  <header class="header">
+    <nav class="nav container" style="color: #003566">
+      <div class="nav__data">
+        <a href="#" class="nav__logo">
+          <i class="ri-microscope-line"></i>Célula
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="/TCC/index.html" class="nav__link">Início</a></li>
+
+          <li><a href="../pages/pagina_eucarionte_procarionte.html" class="nav__link">Célula Eucarionte e Procarionte
+            </a></li>
+
+          <!--=============== DROPDOWN 1 ===============-->
+          <li class="dropdown__item">
+            <div class="nav__link "><a href="../pages/pagina_procarionte.html" style="color: whitesmoke">
+                Célula Procarionte </a> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu" style="background-color:#003566 ">
+              <li>
+                <a href="../pages/procarionte-pilus.html" class="dropdown__link">Pilus</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_capsula.html" class="dropdown__link">Cápsula</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_parede_celular.html" class="dropdown__link">Parede Celular</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_flagelo.html" class="dropdown__link">Flagelo</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_membrana.html" class="dropdown__link">Membrana Plasmática</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_citoplasma.html" class="dropdown__link">Citoplasma</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_fimbrias.html" class="dropdown__link">Fímbrias </a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_nucleoide.html" class="dropdown__link">Nucleoide</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_ribossomos.html" class="dropdown__link">Ribossomos</a>
+              </li>
+
+              <li>
+                <a href="../pages/procarionte_plasmideo.html" class="dropdown__link">Plasmídeo</a>
+              </li>
+            </ul>
+
+            <!--=============== DROPDOWN 2 ===============-->
+          <li class="dropdown__item ">
+            <div class="nav__link  "><a href="../pages/pagina_celula_animal.html" style="color: whitesmoke">
+                Célula Animal </a> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu" style="background-color:#003566 ">
+              <li>
+                <a href="../pages/eucarionte_nucleo.html" class="dropdown__link"> Núcleo</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_membrana.html" class="dropdown__link">Membrana Plasmática</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_citoplasma.html" class="dropdown__link">Citoplasma</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_complexodegolgi.html" class="dropdown__link">Complexo de Golgi</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_mitocondria.html" class="dropdown__link">Mitocôndria</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte.RE.html" class="dropdown__link">Retículo Endoplasmático</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_ribossomos.html" class="dropdown__link">Ribossomos </a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_peroxissomos.html" class="dropdown__link"> Peroxissomos </a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_lisossomos.html" class="dropdown__link">Lisossomos</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_centriolo.html" class="dropdown__link"> Centríolos</a>
+              </li>
+
+              <li>
+                <a href="../pages/eucarionte_citoesqueleto.html" class="dropdown__link">Citoesqueleto</a>
+              </li>
+          </li>
+        </ul>
+        </li>
+
+
+        <!--=============== DROPDOWN 3 ===============-->
+        <li class="dropdown__item">
+          <div class="nav__link "><a href="../pages/pagina_vegetal.html" style="color: whitesmoke">
+              Célula Vegetal </a> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+          </div>
+
+          <ul class="dropdown__menu" style="background-color:#003566 ">
+            <li>
+              <a href="../pages/vegetal_cloroplasto.html" class="dropdown__link">Cloroplastos</a>
+            </li>
+
+            <li>
+              <a href="../pages/vegetal_paredecelular.html" class="dropdown__link">Parede Celular</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_membrana.html" class="dropdown__link">Membrana Plasmática</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_citoplasma.html" class="dropdown__link">Citoplasma</a>
+            </li>
+
+
+            <li>
+              <a href="../pages/vegetal_vacuolo.html" class="dropdown__link">Vacúolo</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_nucleo.html" class="dropdown__link">Núcleo</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_mitocondria.html" class="dropdown__link">Mitocôndria</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_reticulo.html" class="dropdown__link">Retículo Endoplasmático</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_complexodegolgi.html" class="dropdown__link">Complexo de Golgi</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_vegetal_ribossomos.html" class="dropdown__link">Ribossomos</a>
+            </li>
+
+            <li>
+              <a href="../pages/eucarionte_peroxissomos.html" class="dropdown__link">Peroxissomo</a>
+            </li>
+
+
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="conteudo_inicial">
+    <div class="conteudo_text">
+      <h2>Célula Vegetal</h2>
+      <p>
+        > A célula vegetal é uma estrutura muito complexa e apesar de suas semelhanças com a célula animal e as
+        outras células, a vegetal possui
+        características únicas que se deferem das demais.
+      </p>
+      <p>
+        > A célula vegetal, assim como a animal, é eucariótica, ou seja, possui núcleo delimitado por membrana nuclear
+        (carioteca). Além dessa característica, essas células possuem membrana plasmática e citoplasma, estruturas
+        comuns
+        a qualquer célula.
+      </p>
+      <p>
+        > Além das estruturas comuns às células animais, as células vegetais apresentam características únicas que as
+        distinguem.
+        Algumas dessas estruturas são exclusivas das células vegetais e não são encontradas em células animais
+      </p>
+            <div class="Organelas_vegetais">
+                      <p>• Cloroplastos</p>
+                      <p>• Parede Celular</p>
+                      <p>• Vacúolo</p>
+                      <p>• Núcleo</p>
+                      <p>• Mitocôndria</p>
+                      <p>• Retículo Endoplasmático</p>
+                      <p>• Complexo de Golgi</p>
+                      <p>• Peroxisomo</p>
+                      <p>• Ribossomos</p>
+
+      </div>
+    </div>
+    <div class="conteudo_txt_img">
+
+      <div class="imageBox" id="popups">
+
+        <img src="../imagens/vegetal.png" alt="Workplace" usemap="#workmap" id="image" />
+        <p>Passe o mouse pela imagem</p>
+      </div>
+
+      <map name="workmap" id="maps"></map>
+    </div>
+    <div class="imagem-mobile">
+
+      <img src="../imagens/vegetal-mobile.png" usemap="#rect" title="a">
+      <map name="rect" id="rect">
+        <area shape="circle" alt="parte 1" coords="21,60,30" href="../pages/vegetal_paredecelular.html" />
+        <area shape="circle" alt="parte 2" coords="37,89,30" href="../pages/eucarionte_vegetal_membrana.html" />
+        <area shape="circle" alt="parte 3" coords="46,134,20" href="../pages/vegetal_vacuolo.html" />
+        <area shape="circle" alt="parte 4" coords="41,134,30" href="../pages/eucarionte_vegetal_mitocondria.html" />
+        <area shape="circle" alt="parte 5" coords="43,190,30" href="../pages/vegetal_cloroplasto.html" />
+        <area shape="circle" alt="parte 6" coords="261,101,30" href="../pages/eucarionte_vegetal_ribossomos.html" />
+        <area shape="circle" alt="parte 7" coords="279,145,15" href="../pages/eucarionte_vegetal_nucleo.html" />
+        <area shape="circle" alt="parte 8" coords="276,165,20" href="../pages/eucarionte_vegetal_reticulo.html" />
+        <area shape="circle" alt="parte 9" coords="272,195,15" href="../pages/eucarionte_vegetal_complexodegolgi.html" />
+
+      </map>
+      <p>Pressione os nomes das organelas</p>
+
+    </div>
+
+
+  </section>
+  <footer>
+    <img src="../imagens/logoIFRN.png" alt="Logo do IFRN" width="80px" height="80px">
+    <h6>
+      2024
+    </h6>
+  </footer>
+
+  <script>
+    const maps = [
+      {
+        x: 204,
+        y: 170,
+        size: 10,
+        text: 'Núcleo',
+        link: '../pages/eucarionte_vegetal_nucleo.html',
+      },
+      {
+        x: 300,
+        y: 300,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 208,
+        y: 303,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 313,
+        y: 256,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 59,
+        y: 134,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 234,
+        y: 58,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 100,
+        y: 303,
+        size: 10,
+        text: 'Parede Celular',
+        link: '../pages/vegetal_paredecelular.html',
+      },
+
+      {
+        x: 130,
+        y: 127,
+        size: 30,
+        text: 'Vacúolo',
+        link: '../pages/vegetal_vacuolo.html',
+      },
+
+      {
+        x: 117,
+        y: 186,
+        size: 40,
+        text: 'Vacúolo',
+        link: '../pages/vegetal_vacuolo.html',
+      },
+
+      {
+        x: 77,
+        y: 212,
+        size: 30,
+        text: 'Mitocôndria',
+        link: '../pages/eucarionte_vegetal_mitocondria.html',
+      },
+
+      {
+        x: 154,
+        y: 276,
+        size: 30,
+        text: 'Mitocôndria',
+        link: '../pages/eucarionte_vegetal_mitocondria.html',
+      },
+
+      {
+        x: 252,
+        y: 245,
+        size: 30,
+        text: 'Mitocôndria',
+        link: '../pages/eucarionte_vegetal_mitocondria.html',
+      },
+
+
+      {
+        x: 103,
+        y: 100,
+        size: 15,
+        text: 'Cloroplasto',
+        link: '../pages/vegetal_cloroplasto.html',
+      },
+
+
+      {
+        x: 232,
+        y: 105,
+        size: 15,
+        text: 'Cloroplasto',
+        link: '../pages/vegetal_cloroplasto.html',
+      },
+
+
+
+
+
+      {
+        x: 265,
+        y: 215,
+        size: 7,
+        text: 'Cloroplasto',
+        link: '../pages/vegetal_cloroplasto.html',
+      },
+
+
+      {
+        x: 136,
+        y: 258,
+        size: 7,
+        text: 'Cloroplasto',
+        link: '../pages/vegetal_cloroplasto.html',
+      },
+
+      {
+        x: 196,
+        y: 212,
+        size: 15,
+        text: 'Complexo de golgi',
+        link: '../pages/eucarionte_vegetal_complexodegolgi.html',
+      },
+
+      {
+        x: 249,
+        y: 200,
+        size: 15,
+        text: 'Retículo endoplasmático',
+        link: '../pages/eucarionte_vegetal_reticulo.html',
+      },
+
+      {
+        x: 200,
+        y: 249,
+        size: 15,
+        text: 'Retículo endoplasmático',
+        link: '../pages/eucarionte_vegetal_reticulo.html',
+      },
+
+      {
+        x: 183,
+        y: 200,
+        size: 15,
+        text: 'Retículo endoplasmático',
+        link: '../pages/eucarionte_vegetal_reticulo.html',
+      },
+
+      {
+        x: 176,
+        y: 186,
+        size: 15,
+        text: 'Retículo endoplasmático',
+        link: '../pages/eucarionte_vegetal_reticulo.html',
+      },
+
+      {
+        x: 192,
+        y: 105,
+        size: 7,
+        text: 'Ribossomos',
+        link: '../pages/eucarionte_vegetal_ribossomos.html',
+      },
+
+      {
+        x: 72,
+        y: 150,
+        size: 10,
+        text: 'Membrama Plasmática',
+        link: '../pages/eucarionte_vegetal_membrana.html',
+      },
+
+      {
+        x: 247,
+        y: 94,
+        size: 7,
+        text: 'Membrama Plasmática',
+        link: '../pages/eucarionte_vegetal_membrana.html',
+      },
+
+      {
+        x: 99,
+        y: 252,
+        size: 7,
+        text: 'Membrama Plasmática',
+        link: '../pages/eucarionte_vegetal_membrana.html',
+      },
+
+      {
+        x: 93,
+        y: 130,
+        size: 5,
+        text: 'Peroxissomos',
+        link: '../pages/eucarionte_peroxissomos.html',
+      },
+
+      {
+        x: 230,
+        y: 232,
+        size: 5,
+        text: 'Peroxissomos',
+        link: '../pages/eucarionte_peroxissomos.html',
+      },
+
+      {
+        x: 284,
+        y: 156,
+        size: 5,
+        text: 'Peroxissomos',
+        link: '../pages/eucarionte_peroxissomos.html',
+      },
+
+    ];
+
+    const mapsEl = document.getElementById('maps');
+    const popupsEl = document.getElementById('popups');
+    const image = document.getElementById('image');
+
+    maps.forEach((map, index) => {
+      const area = document.createElement('area');
+      area.shape = 'circle';
+      area.alt = map.text;
+      area.coords = `${map.x},${map.y},${map.size}`;
+
+      area.addEventListener('mouseover', () => {
+        openPopup(index);
+      });
+      area.addEventListener('mouseleave', () => {
+        closePopup(index);
+      });
+      area.addEventListener('click', () => window.location.href = map.link);
+
+      mapsEl.appendChild(area);
+
+      const popup = document.createElement('span');
+      popup.classList.add('popup');
+      popup.id = `popup-${index}`;
+      popup.innerText = map.text;
+      popupsEl.appendChild(popup);
+      popup.style.top = map.y - popup.clientHeight + 'px';
+      popup.style.left = map.x - popup.clientWidth / 2 + 'px';
+    });
+
+    function openPopup(n) {
+      const popup = document.getElementById(`popup-${n}`);
+      popup.classList.add('show');
+    }
+
+    function closePopup(n) {
+      const popup = document.getElementById(`popup-${n}`);
+      popup.classList.remove('show');
+    }
+  </script>
+
+
+
+
+
+  <script src="../js/menu.js"></script>
+
+</body>
+
+</html>
